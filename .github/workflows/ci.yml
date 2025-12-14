@@ -15,10 +15,6 @@ jobs:
     permissions:
       contents: read
     steps:
-      - name: Fix the not-a-git-repository issue
-        run: |
-          apk -U add git
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Checkout code
         uses: actions/checkout@v4
       - name: build with Dapper
