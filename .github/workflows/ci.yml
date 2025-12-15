@@ -18,12 +18,7 @@ jobs:
             wget https://github.com/rancher/dapper/releases/download/v0.6.0/dapper-Linux-x86_64
             chmod +x dapper-Linux-x86_64
             mv dapper-Linux-x86_64 /usr/local/bin/dapper
-        - name: Fix the not-a-git-repository issue
-          run: |
-            wget https://github.com/rancher/dapper/releases/download/v0.6.0/dapper-Linux-x86_64
-            chmod +x dapper-Linux-x86_64
-            sudo mv dapper-Linux-x86_64 /usr/local/bin/dapper
-        - name: Checkout code
+       - name: Checkout code
           uses: actions/checkout@v4
         - name: build with Dapper
           run: dapper ci
