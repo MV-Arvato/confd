@@ -10,6 +10,8 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    container:    
+      image: golang:latest
     steps:
       - name: Get dapper
         run: |
