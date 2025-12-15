@@ -10,11 +10,12 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    container:
-      image: martinsvitols268/dapper:0.6.1
-    permissions:
-      contents: read
     steps:
+      - name: Get dapper
+        run: |
+          wget https://github.com/rancher/dapper/releases/download/v0.6.0/dapper-Linux-x86_64
+          chmod +x dapper-Linux-x86_64
+          sudo mv dapper-Linux-x86_64 /usr/local/bin/dapper
       - name: Checkout code
         uses: actions/checkout@v4
       - name: build with Dapper
